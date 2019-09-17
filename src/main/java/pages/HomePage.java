@@ -107,49 +107,49 @@ public class HomePage extends BasePage {
         return new AboutUsPage(webDriver);
     }
 
-//    /**
-//     * Method for click on Onvansertib item on the HomePage
-//     * @return - returns new OnvansertibPage
-//     */
-//    public OnvansertibPage clickOnNavMenuOnvansertibItem() {
-//        navMenuOnvansertib.click();
-//
-//        return new OnvansertibPage(webDriver);
-//    }
-//
-//    public OnvansertibPage clickOnOnvansertibMainMenuItem() {
-//        mainMenuOnvansertib.click();
-//
-//        return new OnvansertibPage(webDriver);
-//    }
-//
-//    public OnvansertibPage clickOnFooterOnvansertibItem() {
-//        footerOnvansertib.click();
-//
-//        return new OnvansertibPage(webDriver);
-//    }
-//
-//    /**
-//     * Method for click on Our Clinical Trials item on the HomePage
-//     * @return - returns new OurClinicalTrialsPage
-//     */
-//    public OurClinicalTrialsPage clickOnOurClinicalTrialsMainMenuItem() {
-//        mainMenuOurClinicalTrials.click();
-//
-//        return new OurClinicalTrialsPage(webDriver);
-//    }
-//
-//    public OurClinicalTrialsPage clickOnNavMenuOurClinicalTrialsItem() {
-//        navMenuOurClinicalTrials.click();
-//
-//        return new OurClinicalTrialsPage(webDriver);
-//    }
-//
-//    public OurClinicalTrialsPage clickOnFooterOurClinicalTrialsItem() {
-//        footerOurClinicalTrials.click();
-//
-//        return new OurClinicalTrialsPage(webDriver);
-//    }
+    /**
+     * Method for click on Onvansertib item on the HomePage
+     * @return - returns new OnvansertibPage
+     */
+    public OnvansertibPage clickOnNavMenuOnvansertibItem() {
+        navMenuOnvansertib.click();
+
+        return new OnvansertibPage(webDriver);
+    }
+
+    public OnvansertibPage clickOnOnvansertibMainMenuItem() {
+        mainMenuOnvansertib.click();
+
+        return new OnvansertibPage(webDriver);
+    }
+
+    public OnvansertibPage clickOnFooterOnvansertibItem() {
+        footerOnvansertib.click();
+
+        return new OnvansertibPage(webDriver);
+    }
+
+    /**
+     * Method for click on Our Clinical Trials item on the HomePage
+     * @return - returns new OurClinicalTrialsPage
+     */
+    public OurClinicalTrialsPage clickOnOurClinicalTrialsMainMenuItem() {
+        mainMenuOurClinicalTrials.click();
+
+        return new OurClinicalTrialsPage(webDriver);
+    }
+
+    public OurClinicalTrialsPage clickOnNavMenuOurClinicalTrialsItem() {
+        navMenuOurClinicalTrials.click();
+
+        return new OurClinicalTrialsPage(webDriver);
+    }
+
+    public OurClinicalTrialsPage clickOnFooterOurClinicalTrialsItem() {
+        footerOurClinicalTrials.click();
+
+        return new OurClinicalTrialsPage(webDriver);
+    }
 //
 //    /**
 //     * Method for click on Investors item on the HomePage
