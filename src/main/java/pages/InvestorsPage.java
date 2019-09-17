@@ -5,19 +5,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AboutUsPage extends BasePage {
+public class InvestorsPage extends BasePage {
 
-    @FindBy(xpath = "//a[contains(text(),'NCT03303339')]")
-    private WebElement externalLink1;
-
-    @FindBy(xpath = "//div[contains(@class,'c-page-header-banner')]")
-    private WebElement pageHeaderBanner;
+    @FindBy(xpath = "//a[@id='home_ove_btn_1']")
+    private WebElement downloadCompanyOverviewButton;
 
     /**
-     * Constructor of AboutUsPage
+     * Constructor of InvestorsPage
      * @param webDriver - webDriver instance
      */
-    public AboutUsPage(WebDriver webDriver) {
+    public InvestorsPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
@@ -26,9 +23,9 @@ public class AboutUsPage extends BasePage {
      * Method for checking Page loading conditions
      */
     public boolean isPageLoaded() {
-        waitUntilElementIsVisible(pageHeaderBanner, 15);
+        waitUntilElementIsClickable(downloadCompanyOverviewButton, 15);
 
 
-        return pageHeaderBanner.isDisplayed();
+        return downloadCompanyOverviewButton.isEnabled();
     }
 }

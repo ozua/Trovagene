@@ -14,7 +14,7 @@ public class OurClinicalTrialsPage extends BasePage {
     private WebElement pageHeaderBanner;
 
     /**
-     * Constructor of AboutUsPage
+     * Constructor of OurClinicalTrialsPage
      * @param webDriver - webDriver instance
      */
     public OurClinicalTrialsPage(WebDriver webDriver) {
@@ -23,7 +23,7 @@ public class OurClinicalTrialsPage extends BasePage {
     }
 
     /**
-     * Method for checking ResetPasswordPage loading conditions
+     * Method for checking Page loading conditions
      */
     public boolean isPageLoaded() {
         waitUntilElementIsVisible(pageHeaderBanner, 15);

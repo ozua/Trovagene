@@ -43,11 +43,14 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[@class='c-bannner-nav__link'][contains(text(),'Recent News')]")
     private WebElement navMenuRecentNews;
 
+    @FindBy(xpath = "//li[@id='menu-item-7358']//a[contains(text(),'Onvansertib')]")
+    private WebElement footerOnvansertib;
+
     @FindBy(xpath = "//li[@id='menu-item-7356']//a[contains(text(),'About Us')]")
     private WebElement footerAboutUs;
 
-    @FindBy(xpath = "//li[@id='menu-item-7358']//a[contains(text(),'Onvansertib')]")
-    private WebElement footerOnvansertib;
+    @FindBy(xpath = "//a[contains(@class,'c-button c-button--middle c-button--blue-gradient')]")
+    private WebElement learnMoreAboutOnvansertibButton;
 
     @FindBy(xpath = "//li[@id='menu-item-7357']//a[contains(text(),'Clinical Trials')]")
     private WebElement footerOurClinicalTrials;
@@ -129,6 +132,12 @@ public class HomePage extends BasePage {
         return new OnvansertibPage(webDriver);
     }
 
+    public OnvansertibPage clickOnLearnMoreAboutOnvansertibButton() {
+        learnMoreAboutOnvansertibButton.click();
+
+        return new OnvansertibPage(webDriver);
+    }
+
     /**
      * Method for click on Our Clinical Trials item on the HomePage
      * @return - returns new OurClinicalTrialsPage
@@ -150,58 +159,58 @@ public class HomePage extends BasePage {
 
         return new OurClinicalTrialsPage(webDriver);
     }
-//
-//    /**
-//     * Method for click on Investors item on the HomePage
-//     * @return - returns new InvestorsPage
-//     */
-//    public InvestorsPage clickOnInvestorsMainMenuItem() {
-//        mainMenuInvestors.click();
-//
-//        return new InvestorsPage(webDriver);
-//    }
-//
-//    /**
-//     * Method for click on Contact item on the HomePage
-//     * @return - returns new ContactPage
-//     */
-//    public ContactPage clickOnContactMainMenuItem() {
-//        mainMenuContact.click();
-//
-//        return new ContactPage(webDriver);
-//    }
-//
-//    /**
-//     * Method for click on Pipeline item on the HomePage
-//     * @return - returns new PipelinePage
-//     */
-//    public PipelinePage clickOnNavMenuPipelineItem() {
-//        navMenuPipeline.click();
-//
-//        return new PipelinePage(webDriver);
-//    }
-//
-//    public PipelinePage clickOnFooterPipelineItem() {
-//        footerPipeline.click();
-//
-//        return new PipelinePage(webDriver);
-//    }
-//
-//    /**
-//     * Method for click on Recent News item on the HomePage
-//     * @return - returns new RecentNewsPage
-//     */
-//    public RecentNewsPage clickOnNavMenuRecentNewsItem() {
-//        navMenuRecentNews.click();
-//
-//        return new RecentNewsPage(webDriver);
-//    }
-//
-//    public RecentNewsPage clickOnFooterRecentNewsItem() {
-//        footerRecentNews.click();
-//
-//        return new RecentNewsPage(webDriver);
-//    }
+
+    /**
+     * Method for click on Investors item on the HomePage
+     * @return - returns new InvestorsPage
+     */
+    public InvestorsPage clickOnInvestorsMainMenuItem() {
+        mainMenuInvestors.click();
+
+        return new InvestorsPage(webDriver);
+    }
+
+    /**
+     * Method for click on Contact item on the HomePage
+     * @return - returns new ContactPage
+     */
+    public ContactPage clickOnContactMainMenuItem() {
+        mainMenuContact.click();
+
+        return new ContactPage(webDriver);
+    }
+
+    /**
+     * Method for click on Pipeline item on the HomePage
+     * @return - returns new PipelinePage
+     */
+    public PipelinePage clickOnNavMenuPipelineItem() {
+        navMenuPipeline.click();
+
+        return new PipelinePage(webDriver);
+    }
+
+    public PipelinePage clickOnFooterPipelineItem() {
+        footerPipeline.click();
+
+        return new PipelinePage(webDriver);
+    }
+
+    /**
+     * Method for click on Recent News item on the HomePage
+     * @return - returns new RecentNewsPage
+     */
+    public RecentNewsPage clickOnNavMenuRecentNewsItem() {
+        navMenuRecentNews.click();
+
+        return new RecentNewsPage(webDriver);
+    }
+
+    public RecentNewsPage clickOnFooterRecentNewsItem() {
+        footerRecentNews.click();
+
+        return new RecentNewsPage(webDriver);
+    }
 //
 //    /**
 //     * Method for click on Contact item on the HomePage

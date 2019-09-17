@@ -42,7 +42,7 @@ public class BaseTest {
 
     @AfterMethod
     public void atfer() {
-        webDriver.close();
+        webDriver.quit();
     }
 
 }

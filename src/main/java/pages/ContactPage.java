@@ -5,22 +5,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class OnvansertibPage extends BasePage {
+public class ContactPage extends BasePage {
 
-    @FindBy(xpath = "//a[contains(text(),'Investigational New Drugs')]")
-    private WebElement externalLink1;
+    @FindBy(xpath = "//a[contains(text(),'www.trovageneoncology.com')]")
+    private WebElement linkToMainPage;
 
-    @FindBy(xpath = "//a[contains(text(),'NCT03303339')]")
-    private WebElement externalLink2;
-
-    @FindBy(xpath = "//section[contains(@class,'c-page-header-banner')]")
+    @FindBy(xpath = "//div[@class='c-page-header-banner']")
     private WebElement pageHeaderBanner;
 
     /**
-     * Constructor of OnvansertibPage
+     * Constructor of ContactPage
      * @param webDriver - webDriver instance
      */
-    public OnvansertibPage(WebDriver webDriver) {
+    public ContactPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
