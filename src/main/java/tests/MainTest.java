@@ -1,5 +1,7 @@
 package tests;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
@@ -28,6 +30,12 @@ public class MainTest extends BaseTest {
     }
 
     @Test
+    public void loadAboutUsPageFromSubMenuTest(){
+        AboutUsPage aboutUsPage = homePage.clickOnSubMenuOurFocusItem();
+        Assert.assertTrue(aboutUsPage.isPageLoaded(), "About Us page wasn't loaded");
+    }
+
+    @Test
     public void loadOnvansertibPageFromNavMenuTest(){
         OnvansertibPage onvansertibPage = homePage.clickOnNavMenuOnvansertibItem();
         Assert.assertTrue(onvansertibPage.isPageLoaded(), "About Us page wasn't loaded");
@@ -52,6 +60,12 @@ public class MainTest extends BaseTest {
     }
 
     @Test
+    public void loadOnvansertibPageFromSubMenuTest(){
+        OnvansertibPage onvansertibPage = homePage.clickOnSubMenuOnvansertibOverviewItem();
+        Assert.assertTrue(onvansertibPage.isPageLoaded(), "About Us page wasn't loaded");
+    }
+
+    @Test
     public void loadOurClinicalTrialsPageFromNavMenuTest(){
         OurClinicalTrialsPage ourClinicalTrialsPage = homePage.clickOnNavMenuOurClinicalTrialsItem();
         Assert.assertTrue(ourClinicalTrialsPage.isPageLoaded(), "About Us page wasn't loaded");
@@ -67,6 +81,22 @@ public class MainTest extends BaseTest {
     public void loadOurClinicalTrialsPageFromFooterTest(){
         OurClinicalTrialsPage ourClinicalTrialsPage = homePage.clickOnFooterOurClinicalTrialsItem();
         Assert.assertTrue(ourClinicalTrialsPage.isPageLoaded(), "About Us page wasn't loaded");
+    }
+
+    @Test
+    public void watchNewVideoFromTopBarTest(){
+        OurClinicalTrialsPage ourClinicalTrialsPage = homePage.clickOnwatchNewVideoFromTopBarItem();
+        Assert.assertTrue(ourClinicalTrialsPage.isPageLoaded(), "About Us page wasn't loaded");
+
+        WebElement video = webDriver.findElement(By.xpath("//div[@id='wistia_77.big_play_button_graphic']"));
+        video.click();
+        String subWindowHandler = null;
+        Set<String> handles = webDriver.getWindowHandles(); // get all window handles
+        Iterator<String> iterator = handles.iterator();
+        while (iterator.hasNext()){
+            subWindowHandler = iterator.next();
+        }
+        webDriver.switchTo().window(subWindowHandler); // switch to popup window
     }
 
     @Test
@@ -97,6 +127,12 @@ public class MainTest extends BaseTest {
     @Test
     public void loadPipelinePageFromFooterTest(){
         PipelinePage pipelinePage = homePage.clickOnFooterPipelineItem();
+        Assert.assertTrue(pipelinePage.isPageLoaded(), "About Us page wasn't loaded");
+    }
+
+    @Test
+    public void loadPipelinePageFromSubMenuTest(){
+        PipelinePage pipelinePage = homePage.clickOnSubMenuPipelineItem();
         Assert.assertTrue(pipelinePage.isPageLoaded(), "About Us page wasn't loaded");
     }
 

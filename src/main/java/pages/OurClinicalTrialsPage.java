@@ -13,6 +13,9 @@ public class OurClinicalTrialsPage extends BasePage {
     @FindBy(xpath = "//div[contains(@class,'c-page-header-banner')]")
     private WebElement pageHeaderBanner;
 
+    @FindBy(xpath = "//img[@id='wistia_61.thumbnail_img']")
+    private WebElement newVideo;
+
     /**
      * Constructor of OurClinicalTrialsPage
      * @param webDriver - webDriver instance
@@ -22,12 +25,13 @@ public class OurClinicalTrialsPage extends BasePage {
         PageFactory.initElements(webDriver, this);
     }
 
+
     /**
      * Method for checking Page loading conditions
      */
     public boolean isPageLoaded() {
         waitUntilElementIsVisible(pageHeaderBanner, 15);
-
+        waitUntilElementIsClickable(newVideo, 15);
 
         return pageHeaderBanner.isDisplayed();
     }

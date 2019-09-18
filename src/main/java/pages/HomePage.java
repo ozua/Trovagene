@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -79,6 +80,18 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//aside[@id='custom_html-4']//a[3]")
     private WebElement footerTwitter;
 
+    @FindBy(xpath = "//li[@id='menu-item-7347']")
+    private WebElement subMenuPipeline;
+
+    @FindBy(xpath = "//li[@id='menu-item-7345']")
+    private WebElement subMenuOurFocus;
+
+    @FindBy(xpath = "//li[@id='menu-item-7348']")
+    private WebElement subMenuOnvansertibOverview;
+
+    @FindBy(xpath = "//a[@id='tpbr_calltoaction']")
+    private WebElement watchNewVideoFromTopBarButton;
+
     /**
      * Constructor of LoginPage
      * @param webDriver - webDriver instance
@@ -106,6 +119,16 @@ public class HomePage extends BasePage {
 
     public AboutUsPage clickOnFooterAboutUsItem() {
         footerAboutUs.click();
+
+        return new AboutUsPage(webDriver);
+    }
+
+    public AboutUsPage clickOnSubMenuOurFocusItem() {
+        Actions builder = new Actions(webDriver);
+        waitUntilElementIsClickable(mainMenuAboutUs, 10);
+        builder.moveToElement(mainMenuAboutUs).build().perform();
+        waitUntilElementIsClickable(subMenuOurFocus, 10);
+        subMenuOurFocus.click();
 
         return new AboutUsPage(webDriver);
     }
@@ -138,6 +161,16 @@ public class HomePage extends BasePage {
         return new OnvansertibPage(webDriver);
     }
 
+    public OnvansertibPage clickOnSubMenuOnvansertibOverviewItem() {
+        Actions builder = new Actions(webDriver);
+        waitUntilElementIsClickable(mainMenuOnvansertib, 10);
+        builder.moveToElement(mainMenuOnvansertib).build().perform();
+        waitUntilElementIsClickable(subMenuOnvansertibOverview, 10);
+        subMenuOnvansertibOverview.click();
+
+        return new OnvansertibPage(webDriver);
+    }
+
     /**
      * Method for click on Our Clinical Trials item on the HomePage
      * @return - returns new OurClinicalTrialsPage
@@ -156,6 +189,13 @@ public class HomePage extends BasePage {
 
     public OurClinicalTrialsPage clickOnFooterOurClinicalTrialsItem() {
         footerOurClinicalTrials.click();
+
+        return new OurClinicalTrialsPage(webDriver);
+    }
+
+    public OurClinicalTrialsPage clickOnwatchNewVideoFromTopBarItem() {
+        watchNewVideoFromTopBarButton.click();
+
 
         return new OurClinicalTrialsPage(webDriver);
     }
@@ -192,6 +232,16 @@ public class HomePage extends BasePage {
 
     public PipelinePage clickOnFooterPipelineItem() {
         footerPipeline.click();
+
+        return new PipelinePage(webDriver);
+    }
+
+    public PipelinePage clickOnSubMenuPipelineItem() {
+        Actions builder = new Actions(webDriver);
+        waitUntilElementIsClickable(mainMenuOnvansertib, 10);
+        builder.moveToElement(mainMenuOnvansertib).build().perform();
+        waitUntilElementIsClickable(subMenuPipeline, 10);
+        subMenuPipeline.click();
 
         return new PipelinePage(webDriver);
     }
