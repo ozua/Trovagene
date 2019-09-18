@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 /**
  * HomePage object class
@@ -312,21 +313,27 @@ public class HomePage extends BasePage {
 //        return new LinkedInPage(webDriver);
 //    }
 //
-//    /**
-//     * Method for click on Twitter item on the HomePage
-//     * @return - returns new TwitterPage
-//     */
-//    public TwitterPage clickOnFooterTwitterItem() {
-//        footerTwitter.click();
-//
-//        return new TwitterPage(webDriver);
-//    }
+    /**
+     * Method for click on Twitter item on the HomePage
+     * @return - returns new TwitterPage
+     */
+    public TwitterPage clickOnFooterTwitterItem() {
+        footerTwitter.click();
+
+        return new TwitterPage(webDriver);
+    }
 
     /**
-     * Method for checking HomePage loading conditions
+     * Method for checking Page loading conditions
      */
     public boolean isPageLoaded() {
         waitUntilElementIsVisible(mainLogo, 10);
+
+        String expectedTitle = "Trovagene (@trovagene) | Twitter";
+        Assert.assertEquals(getCurrentTitle(), expectedTitle);
+
+        String expectedUrl = "https://twitter.com/trovagene";
+        Assert.assertEquals(getCurrentUrl(), expectedUrl);
 
         return mainLogo.isDisplayed();
     }

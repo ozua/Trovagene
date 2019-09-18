@@ -6,19 +6,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class AboutUsPage extends BasePage {
+public class TwitterPage extends BasePage {
 
-    @FindBy(xpath = "//a[contains(text(),'NCT03303339')]")
-    private WebElement externalLink1;
-
-    @FindBy(xpath = "//div[contains(@class,'c-page-header-banner')]")
-    private WebElement pageHeaderBanner;
+    @FindBy(xpath = "//img[contains(@class,'ProfileAvatar-image')]")
+    private WebElement profileAvatarPicture;
 
     /**
      * Constructor of AboutUsPage
      * @param webDriver - webDriver instance
      */
-    public AboutUsPage(WebDriver webDriver) {
+    public TwitterPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
@@ -27,14 +24,14 @@ public class AboutUsPage extends BasePage {
      * Method for checking Page loading conditions
      */
     public boolean isPageLoaded() {
-        waitUntilElementIsVisible(pageHeaderBanner, 15);
+        waitUntilElementIsVisible(profileAvatarPicture, 15);
 
-        String expectedTitle = "PLK1 Cancer, Treatment Acute Myeloid Leukemia | Trovagene";
+        String expectedTitle = "Trovagene (@trovagene) | Twitter";
         Assert.assertEquals(getCurrentTitle(), expectedTitle);
 
-        String expectedUrl = "https://trovageneoncology.com/about/";
+        String expectedUrl = "https://twitter.com/trovagene";
         Assert.assertEquals(getCurrentUrl(), expectedUrl);
 
-        return pageHeaderBanner.isDisplayed();
+        return profileAvatarPicture.isDisplayed();
     }
 }

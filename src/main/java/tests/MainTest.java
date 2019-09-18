@@ -162,4 +162,17 @@ public class MainTest extends BaseTest {
         Assert.assertTrue(recentNewsPage.isPageLoaded(), "About Us page wasn't loaded");
     }
 
+    @Test
+    public void loadTwitterPageFromFooterTest(){
+        TwitterPage twitterPage = homePage.clickOnFooterTwitterItem();
+        String subWindowHandler = null;
+        Set<String> handles = webDriver.getWindowHandles(); // get all window handles
+        Iterator<String> iterator = handles.iterator();
+        while (iterator.hasNext()){
+            subWindowHandler = iterator.next();
+        }
+        webDriver.switchTo().window(subWindowHandler); // switch to popup window
+        Assert.assertTrue(twitterPage.isPageLoaded(), "Twitter page wasn't loaded");
+    }
+
 }
